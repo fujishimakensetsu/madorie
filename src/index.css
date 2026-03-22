@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #32373c;
+  --color-primary-light: #4a5058;
+  --color-accent: #C8A96E;
+  --color-accent-light: #D4BA85;
+  --color-cta: #C75C2A;
+  --color-cta-hover: #B5512A;
+  --color-canvas-bg: #FFFFFF;
+  --color-grid-line: #E8E8E8;
+  --color-app-bg: #FFFFFF;
+  --color-surface: #F7F6F3;
+  --color-text-main: #32373c;
+  --color-text-sub: #8C8C8C;
+  --color-text-muted: #ABABAB;
+  --color-border: #E8E6E1;
+  --color-wall: #555555;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'M PLUS 1', 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
+  background-color: #F5F4F1;
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'palt';
+  letter-spacing: 0.02em;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Display font ── */
+.font-display {
+  font-family: 'Shippori Mincho', 'Noto Sans JP', serif;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D5D3CE; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #B0AEA9; }
+
+/* ── Room chip ── */
+.room-chip {
+  transition: border-color 0.18s, background-color 0.18s, transform 0.12s, box-shadow 0.18s;
+  will-change: transform;
+}
+.room-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.room-chip:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
+
+/* ── Toolbar panel button ── */
+.tb-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 30px;
+  min-width: 30px;
+  padding: 0 8px;
+  border-radius: 8px;
+  background: #F5F4F1;
+  border: 1px solid #EEEDEA;
+  transition: all 0.15s ease;
+  color: #8C8C8C;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 500;
+}
+.tb-btn:hover {
+  background: #EEEDEA;
+  border-color: #D5D3CE;
+  color: #32373c;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.tb-btn.active {
+  background: #32373c;
+  border-color: #32373c;
+  color: #fff;
+  box-shadow: 0 1px 4px rgba(50,55,60,0.2);
+}
+.tb-btn.icon-only {
+  padding: 0;
+  width: 30px;
+}
+
+/* ── Action panel button (property panel) ── */
+.act-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #D5D3CE;
+  background: #FFFFFF;
+  color: #5C5C5C;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.act-btn:hover {
+  background: #FAFAF8;
+  border-color: #32373c;
+  color: #32373c;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+.act-btn:active {
+  background: #F0EFEC;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+}
+.act-btn.danger {
+  color: #C0564C;
+  border-color: #E5B5AF;
+  background: #FFF5F4;
+}
+.act-btn.danger:hover {
+  background: #FDF0EE;
+  border-color: #C0564C;
+  box-shadow: 0 2px 4px rgba(192,86,76,0.1);
+}
+
+/* ── Header panel button ── */
+.header-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 9px;
+  background: #F7F6F3;
+  border: 1px solid #E8E6E1;
+  color: #5C5C5C;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  letter-spacing: 0.02em;
+}
+.header-btn:hover {
+  background: #EEEDEA;
+  border-color: #D5D3CE;
+  color: #32373c;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* ── CTA panel button ── */
+.cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  background: #32373c;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  box-shadow: 0 4px 16px rgba(50,55,60,0.18), 0 1px 3px rgba(0,0,0,0.1);
+}
+.cta-btn:hover {
+  background: #3d4349;
+  box-shadow: 0 6px 24px rgba(50,55,60,0.25), 0 2px 6px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+.cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(50,55,60,0.15);
+}
+
+/* ── CTA pulse ── */
+@keyframes cta-glow {
+  0%, 100% { box-shadow: 0 4px 16px rgba(50,55,60,0.18), 0 1px 3px rgba(0,0,0,0.1); }
+  50% { box-shadow: 0 6px 20px rgba(50,55,60,0.22), 0 0 0 4px rgba(200,169,110,0.06); }
+}
+.cta-glow {
+  animation: cta-glow 3s ease-in-out infinite;
+}
+
+/* ── Template card entrance ── */
+@keyframes card-rise {
+  from { opacity: 0; transform: translateY(32px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.template-card {
+  animation: card-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* ── Hero entrance ── */
+@keyframes hero-fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-enter {
+  animation: hero-fade 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* ── Start button entrance ── */
+@keyframes btn-appear {
+  from { opacity: 0; transform: translateY(16px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.btn-enter {
+  animation: btn-appear 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+}
+
+/* ── Start button hover pulse ring ── */
+@keyframes ring-ping {
+  0% { box-shadow: 0 0 0 0 rgba(200,169,110,0.3); }
+  70% { box-shadow: 0 0 0 10px rgba(200,169,110,0); }
+  100% { box-shadow: 0 0 0 0 rgba(200,169,110,0); }
+}
+
+/* ── Mobile drawer ── */
+@keyframes drawer-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* ── Gold line decoration ── */
+.gold-line {
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C8A96E, transparent);
+}
+
+/* ── Zoom slider track ── */
+.zoom-track {
+  width: 80px;
+  height: 3px;
+  background: #EEEDEA;
+  border-radius: 9999px;
+  position: relative;
+}
+.zoom-fill {
+  height: 100%;
+  background: #32373c;
+  border-radius: 9999px;
+  transition: width 0.15s ease;
+}

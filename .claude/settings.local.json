@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(cp -r \"C:/Users/r-moc/Desktop/madorie-temp/\"* \"C:/Users/r-moc/Desktop/簡単間取り作成メーカー/\")",
+      "Bash(cp \"C:/Users/r-moc/Desktop/madorie-temp/.gitignore\" \"C:/Users/r-moc/Desktop/簡単間取り作成メーカー/\")",
+      "Bash(npm install:*)",
+      "Bash(mkdir -p types constants stores hooks components/layout components/canvas components/sidebar components/templates components/info components/cta utils)",
+      "Bash(rm -f App.css)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)",
+      "Bash(npx vite:*)",
+      "Bash(echo \"EXIT: $?\")",
+      "WebFetch(domain:fujishima-kensetsu.co.jp)",
+      "Bash(python:*)",
+      "Bash(netstat -ano)",
+      "Bash(wmic process:*)",
+      "Bash(tasklist /FI \"PID eq 28820\" /V /FO LIST)",
+      "Bash(grep -c mt-14 dist/assets/*.js)",
+      "Bash(grep -c mb-14 dist/assets/*.js)",
+      "Bash(grep -c \"mb-16\" dist/assets/*.css)",
+      "Bash(grep -c \"32373c\" dist/assets/*.css)",
+      "Bash(taskkill /F /IM \"chrome.exe\")",
+      "Bash(taskkill /F /IM \"msedge.exe\")",
+      "Bash(tasklist)",
+      "Bash(taskkill /F /PID 8536 /PID 23176 /PID 28820 /PID 24768 /PID 7792 /PID 29932 /PID 21936)",
+      "Bash(cd:*)",
+      "Bash(gcloud projects:*)",
+      "Bash(gcloud config:*)",
+      "Bash(gcloud services:*)",
+      "Bash(gcloud artifacts:*)",
+      "Bash(gcloud iam:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)"
+    ]
+  }
+}
